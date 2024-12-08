@@ -3,58 +3,55 @@ package com.example.javaexamwebstoresportswear.models;
 import jakarta.persistence.*;
 
 @Entity
-public class OrderDetail {
+public class OrderDetail
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ManyToOne
     private Order order;
-
     @ManyToOne
     private Product product;
-
     private Integer quantity;
     private Double price;
-
-    // Геттери і сеттери
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
-
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
-
-    public Order getOrder() {
+    public Order getOrder()
+    {
         return order;
     }
-
-    public void setOrder(Order order) {
+    public void setOrder(Order order)
+    {
         this.order = order;
     }
-
-    public Product getProduct() {
+    public Product getProduct()
+    {
         return product;
     }
-
-    public void setProduct(Product product) {
+    public void setProduct(Product product)
+    {
         this.product = product;
     }
-
-    public Integer getQuantity() {
+    public Integer getQuantity()
+    {
         return quantity;
     }
-
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Integer quantity)
+    {
         this.quantity = quantity;
     }
-
-    public Double getPrice() {
+    public Double getPrice()
+    {
         return price;
     }
-
-    public void setPrice(Double price) {
+    public void setPrice(Double price)
+    {
         this.price = price;
     }
 }
