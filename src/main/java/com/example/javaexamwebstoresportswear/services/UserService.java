@@ -1,7 +1,8 @@
 package com.example.javaexamwebstoresportswear.services;
 
-import com.example.javaexamwebstore.models.User;
-import com.example.javaexamwebstore.repositories.UserRepository;
+import com.example.javaexamwebstoresportswear.models.User;
+import com.example.javaexamwebstoresportswear.dto.UserRegistrationDto;
+import com.example.javaexamwebstoresportswear.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,10 @@ public class UserService
 {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    User register(UserRegistrationDto registrationDto)
+    {
+        return null;
+    }
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder)
     {
         this.userRepository = userRepository;

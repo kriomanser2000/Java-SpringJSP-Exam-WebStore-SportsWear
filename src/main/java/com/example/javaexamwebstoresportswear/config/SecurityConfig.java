@@ -50,4 +50,18 @@ public class SecurityConfig
     {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
+    @Override
+    protected void configure(HttpSecurity http) throws Exception
+    {
+        http.authorizeRequests()
+                .antMatchers("/auth/register", "/auth/login", "/css/**", "/js/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/auth/login")
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll();
+    }
 }

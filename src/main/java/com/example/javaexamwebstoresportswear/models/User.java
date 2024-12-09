@@ -4,22 +4,22 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class User
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String fullName;
     private String email;
+    @Column(unique = true)
+    private String username;
     private String password;
-    private String phone;
     private String city;
     private String country;
-    @Enumerated(EnumType.STRING)
-    private Role role = Role.USER;
-    private Boolean isBlocked = false;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Order> orders;
+    private String phone;
+    private boolean enabled = true;
+    public User() {}
     public enum Role
     {
         USER, ADMIN

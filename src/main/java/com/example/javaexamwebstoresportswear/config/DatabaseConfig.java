@@ -6,7 +6,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import javax.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityManagerFactory;
 
 @Configuration
 public class DatabaseConfig
@@ -15,7 +15,7 @@ public class DatabaseConfig
     public LocalContainerEntityManagerFactoryBean entityManagerFactory()
     {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-        factoryBean.setPackagesToScan("com.example.javaexamwebstore.models");
+        factoryBean.setPackagesToScan("com.example.javaexamwebstoresportswear.models");
         return factoryBean;
     }
     @Bean
